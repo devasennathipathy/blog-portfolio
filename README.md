@@ -28,7 +28,7 @@ The portfolio presents my skills, education, achievements, and projects, includi
 
 ## Run locally
 
-Use Node.js 22.12 or later:
+Use Node.js 24:
 
 ```bash
 npm install
