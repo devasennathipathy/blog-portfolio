@@ -1,0 +1,14 @@
+.git
+.data
+.npm-cache
+.starter-sources
+firebase-export-*
+node_modules
+frontend/dist
+artifacts
+test-results
+playwright-report
+**/.env
+**/.env.*
+!**/.env.example
+**/*-debug.log

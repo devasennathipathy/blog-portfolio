@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "MONGOMS_DISABLE_POSTINSTALL=1 npm ci",
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 30,
+      "includeFiles": "backend/src/**"
+    }
+  },
+  "routes": [
+    { "src": "/api(?:/.*)?", "dest": "/api/index.js" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}

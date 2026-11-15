@@ -1,0 +1,30 @@
+{
+  "name": "fieldnotes-blog-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "dev:local": "node scripts/dev-local.mjs",
+    "build": "npm run build -w frontend",
+    "start": "npm run start -w backend",
+    "test": "npm run test -w backend",
+    "test:ui": "playwright test",
+    "test:firebase": "firebase emulators:exec --only auth --project demo-fieldnotes \"node --test backend/test/firebase.test.js\"",
+    "migrate:starter": "node backend/scripts/migrate-starter.js",
+    "seed": "npm run seed -w backend",
+    "admin": "npm run admin -w backend"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "concurrently": "^9.2.1",
+    "firebase-tools": "^15.36.0"
+  }
+}
