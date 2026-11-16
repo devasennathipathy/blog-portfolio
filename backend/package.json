@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node --watch index.js",
+    "dev": "node index.js",
+    "dev:watch": "node --watch --watch-path=src --watch-path=../shared index.js",
     "start": "node index.js",
     "test": "node --test --test-concurrency=1 test/*.test.js",
     "seed": "node scripts/seed.js",
